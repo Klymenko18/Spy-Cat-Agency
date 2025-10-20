@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: spy-cat-agency
+Version: 0.1.0
+Summary: Spy Cat Agency management system (Django + DRF + PostgreSQL)
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: django>=5.0
+Requires-Dist: djangorestframework>=3.15
+Requires-Dist: psycopg[binary]>=3.2
+Requires-Dist: python-dotenv>=1.0
+Requires-Dist: requests>=2.32
+Requires-Dist: drf-spectacular>=0.27
+Requires-Dist: drf-spectacular-sidecar>=2024.7.1
+Requires-Dist: gunicorn>=21.2
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: pytest-django>=4.8; extra == "dev"
+Requires-Dist: model-bakery>=1.18; extra == "dev"
+Requires-Dist: black>=24.0; extra == "dev"
+Requires-Dist: isort>=5.13; extra == "dev"

@@ -1,0 +1,49 @@
+[project]
+name = "spy-cat-agency"
+version = "0.1.0"
+description = "Spy Cat Agency management system (Django + DRF + PostgreSQL)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "django>=5.0",
+  "djangorestframework>=3.15",
+  "psycopg[binary]>=3.2",
+  "python-dotenv>=1.0",
+  "requests>=2.32",
+  "drf-spectacular>=0.27",
+  "drf-spectacular-sidecar>=2024.7.1",
+  "gunicorn>=21.2",
+  "djangorestframework-simplejwt>=5.3"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "pytest-django>=4.8",
+  "model-bakery>=1.18",
+  "black>=24.0",
+  "isort>=5.13"
+]
+
+[tool.pytest.ini_options]
+# тести йдуть на SQLite-конфіг
+DJANGO_SETTINGS_MODULE = "config.settings.test"
+python_files = ["test_*.py", "*_tests.py", "tests.py"]
+addopts = "-q"
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["apps*", "config*"]
+exclude = ["docker*", "tests*", ".*", "venv*", ".venv*"]
+
+[build-system]
+requires = ["setuptools>=69.0", "wheel"]
+build-backend = "setuptools.build_meta"
